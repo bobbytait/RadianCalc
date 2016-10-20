@@ -33,7 +33,7 @@ namespace RadianCalc
             if (String.IsNullOrEmpty(textBox.Text))
             {
                 textDegrees.Text = "";
-                textNormalized.Text = "";
+                textRadiansNormalized.Text = "";
                 return;
             }
 
@@ -47,7 +47,7 @@ namespace RadianCalc
             {
                 textDegrees.Text = RadiansToDegrees(radians).ToString();
             }
-            textNormalized.Text = GetNormalizedRadians(radians).ToString();
+            textRadiansNormalized.Text = GetNormalizedRadians(radians).ToString();
         }
 
         private void textDegrees_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -66,7 +66,7 @@ namespace RadianCalc
             if (String.IsNullOrEmpty(textBox.Text))
             {
                 textRadians.Text = "";
-                textNormalized.Text = "";
+                textDegreesNormalized.Text = "";
                 return;
             }
 
@@ -81,7 +81,7 @@ namespace RadianCalc
             {
                 textRadians.Text = radians.ToString();
             }
-            //textNormalized.Text = GetNormalizedRadians(radians).ToString();
+            textDegreesNormalized.Text = GetNormalizedDegrees(degrees).ToString();
         }
 
         private void DiscardSpaceKeyPress(TextBox textBox, KeyEventArgs e)
@@ -106,9 +106,14 @@ namespace RadianCalc
 
         #region Other helpful methods
 
-        private double GetNormalizedRadians(double degrees)
+        private double GetNormalizedRadians(double radians)
         {
-            return Wrap(degrees, RADIANS_PER_CIRCLE, 0);
+            return Wrap(radians, RADIANS_PER_CIRCLE, 0);
+        }
+
+        private double GetNormalizedDegrees(double degrees)
+        {
+            return Wrap(degrees, 360, 0);
         }
 
         #endregion Other helpful methods
