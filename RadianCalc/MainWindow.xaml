@@ -7,8 +7,8 @@
     xmlns:local="clr-namespace:RadianCalc"
     mc:Ignorable="d"
     Title="Rad!"
-    Width="268"
-    Height="292">
+    Width="538"
+    Height="212">
 
     <Window.Resources>
         <Style
@@ -52,33 +52,48 @@
 
     <Grid>
         <StackPanel
-            Orientation="Vertical">
+            Orientation="Horizontal" >
 
-        <TextBlock
-            Text="Radians"
-             />
+            <StackPanel
+                Orientation="Vertical">
 
-        <TextBox
-            x:Name="textRadians"
-            PreviewKeyDown="textRadians_PreviewKeyDown"
-            PreviewTextInput="textRadians_PreviewTextInput"
-            TextChanged="textRadians_TextChanged" />
+                <TextBlock
+                    Text="Radians" />
 
-        <TextBlock
-            Text="Normalized" />
+                <TextBox
+                    x:Name="textRadians"
+                    PreviewKeyDown="textRadians_PreviewKeyDown"
+                    PreviewTextInput="textRadians_PreviewTextInput"
+                    TextChanged="textRadians_TextChanged" />
 
-        <TextBox
-            x:Name="textNormalized"
-            IsEnabled="False" />
+                <TextBlock
+                    Text="Degrees" />
 
-        <TextBlock
-            Text="Degrees" />
+                <TextBox
+                    x:Name="textDegrees"
+                    PreviewKeyDown="textDegrees_PreviewKeyDown"
+                    PreviewTextInput="textDegrees_PreviewTextInput"
+                    TextChanged="textDegrees_TextChanged" />
 
-        <TextBox
-            x:Name="textDegrees"
-            PreviewKeyDown="textDegrees_PreviewKeyDown"
-            PreviewTextInput="textDegrees_PreviewTextInput"
-            TextChanged="textDegrees_TextChanged" />
+            </StackPanel>
+
+            <StackPanel
+                    Orientation="Vertical">
+                <TextBlock
+                    Text="Normalized" />
+
+                <TextBox
+                    x:Name="textRadiansNormalized"
+                    IsEnabled="False" />
+
+                <TextBlock
+                    Text="Normalized" />
+
+                <TextBox
+                    x:Name="textDegreesNormalized"
+                    IsEnabled="False" />
+
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
